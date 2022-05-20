@@ -1,15 +1,9 @@
-import "./App.css";
-import Home from "./pages/Home";
-import Rules from "./pages/Rules";
-import Result from "./pages/Result";
-import Quiz from "./pages/Quiz";
+import RoutesPages from "./components/RoutesPages";
+
 function App() {
   return (
     <div className="App">
-      <Home />
-      <Rules />
-      <Result />
-      <Quiz />
+      <RoutesPages />
     </div>
   );
 }
