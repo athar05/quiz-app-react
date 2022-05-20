@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Poppins:wght@200;300&display=swap');
 :root {
   --primary: #3a86ff;
+  --white: #fff
 }
 
 *{
@@ -13,8 +15,33 @@ a {
 }
 
 .App {
-border: 5px solid var(--primary);
+/* border: 5px solid var(--primary); */
   height: 98.5vh;
   margin: 5px;
   padding: 5px;
 }
+
+/* Navbar styling start */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+
+.nav-text {
+  font-family: 'Grape Nuts', cursive;
+  font-size: 3rem;
+  color: var(--primary);
+}
+.nav-buttons > button{
+  margin: 0 0.25rem;
+  color: var(--primary);
+}
+
+.nav-buttons > button:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Navbar styling end */
