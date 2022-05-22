@@ -4,11 +4,12 @@ import Navbar from "../components/Navbar/Navbar";
 
 function Home() {
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="nav">
         <Navbar />
       </div>
-      <div>
+      <div className="body-container"></div>
+      <div className="footer">
         <Footer />
       </div>
     </div>
