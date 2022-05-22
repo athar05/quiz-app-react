@@ -109,3 +109,23 @@ a {
   margin-right: 0.75rem;
 }
 /* home body styling end  */
+
+/* media queries start */
+/* home page quries start */
+@media (max-width: 900px){
+  .home-body-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .home-body-banner{
+  justify-content: center;
+  }
+  .quiz-settings {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+/* home page queries end */
+/* media queries end */
