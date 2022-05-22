@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer/Footer";
+import HomeBody from "../components/Home-body/HomeBody";
 import Navbar from "../components/Navbar/Navbar";
 
 function Home() {
@@ -8,7 +9,9 @@ function Home() {
       <div className="nav">
         <Navbar />
       </div>
-      <div className="body-container"></div>
+      <div className="body-container">
+        <HomeBody />
+      </div>
       <div className="footer">
         <Footer />
       </div>

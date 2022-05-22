@@ -26,7 +26,7 @@ a {
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-rows: 10vh 110% 10vh;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -41,6 +41,7 @@ a {
 }
 
 .body-container {
+  font-family: poppins;
   grid-area: body-container;
  }
 
@@ -50,7 +51,8 @@ a {
   font-family: poppins;
   font-size: 1.5rem;
   grid-area: footer;
-  border-top: 2px solid var(--primary)
+  border-top: 2px solid var(--primary);
+  margin-top:1rem ;
 }
 
 /* Grid Layout End */
@@ -79,3 +81,31 @@ a {
 }
 
 /* navbar styling end */
+
+/* home body styling start  */
+
+.home-body-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-body-banner{
+  display: flex;
+  width: 55%;
+  margin-left: 0.75rem;
+}
+
+.banner-image {
+  max-width:100%;
+  max-height:100%;
+}
+
+.quiz-settings {
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+  border: 1px solid black;
+  width: 45%;
+  margin-right: 0.75rem;
+}
+/* home body styling end  */
