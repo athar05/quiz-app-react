@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CategoryContext } from "../../context/CategoryContext";
 import Categories from "../../Data/Categories";
+import { Link } from "react-router-dom";
 
 let categories = Categories;
 
 function CategoryCard() {
+  const { setCategory } = useContext(CategoryContext);
   return (
     <div className="quiz-category-listing">
       {categories.map((cat) => (
         <div
           className="category-card"
           key={cat.category}
-          onClick={() => console.log(cat.category.toLowerCase())}
+          onClick={() => setCategory(cat.value)}
         >
           <img src={`${cat.img}`} alt="" className="category-image" />
           <h4 key={cat.value}>{cat.category}</h4>
