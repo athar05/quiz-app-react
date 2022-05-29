@@ -10,14 +10,16 @@ function CategoryCard() {
   return (
     <div className="quiz-category-listing">
       {categories.map((cat) => (
-        <div
-          className="category-card"
-          key={cat.category}
-          onClick={() => setCategory(cat.value)}
-        >
-          <img src={`${cat.img}`} alt="" className="category-image" />
-          <h4 key={cat.value}>{cat.category}</h4>
-        </div>
+        <Link to="/rules">
+          <div
+            className="category-card"
+            key={cat.category}
+            onClick={() => setCategory(cat.value)}
+          >
+            <img src={`${cat.img}`} alt="" className="category-image" />
+            <h4 key={cat.value}>{cat.category}</h4>
+          </div>
+        </Link>
       ))}
     </div>
   );
