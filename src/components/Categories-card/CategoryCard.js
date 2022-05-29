@@ -14,7 +14,9 @@ function CategoryCard() {
           <div
             className="category-card"
             key={cat.category}
-            onClick={() => setCategory(cat.value)}
+            onClick={() => {
+              setCategory({ value: cat.value });
+            }}
           >
             <img src={`${cat.img}`} alt="" className="category-image" />
             <h4 key={cat.value}>{cat.category}</h4>
