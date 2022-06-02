@@ -16,7 +16,6 @@ function Navbar() {
           </div>
           <div className="nav-buttons">
             <Button variant="outlined">Login</Button>
-            <Button variant="outlined">Sign Up</Button>
           </div>
         </Toolbar>
       </AppBar>
