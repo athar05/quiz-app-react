@@ -1,2 +1,168 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Poppins:wght@200;300&display=swap');
+
+:root {
+  --primary: #3a86ff;
+  --white: #fff;
+  --gray: #e5e5e5;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+.App {
+  height: 98.5vh;
+  margin: 5px;
+  padding: 5px;
+}
+
+/* Grid Layout Start */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 10vh 90% 10vh;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "nav nav nav"
+    "body-container body-container body-container"
+    "footer footer footer";
+}
+
+.nav {
+  grid-area: nav;
+  background-color: black;
+}
+
+.body-container {
+  font-family: poppins;
+  grid-area: body-container;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  font-family: poppins;
+  font-size: 1.5rem;
+  grid-area: footer;
+  border-top: 2px solid var(--primary);
+  margin-top: 1rem;
+}
+
+/* Grid Layout End */
+
+/* navbar styling start */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+
+.nav-text {
+  font-family: 'Grape Nuts', cursive;
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.nav-buttons>button {
+  margin: 0 0.25rem;
+  color: var(--primary);
+}
+
+.nav-buttons>button:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* navbar styling end */
+
+/* home body styling start  */
+
+.home-body-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+}
+
+.home-body-banner {
+  display: flex;
+  margin-left: 0.75rem;
+}
+
+.quiz-banner {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.quiz-settings {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary);
+  width: 70%;
+}
+
+.quiz-category-listing {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0 0.5rem;
+}
+
+.category-card {
+  border: 1px solid var(--primary);
+  text-align: center;
+  width: 10rem;
+  height: 10rem;
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem;
+  background-color: var(--gray);
+  border-radius: 0.3rem;
+  transition: 0.4s;
+}
+
+.category-card:hover {
+  cursor: pointer;
+  background-color: var(--white);
+}
+
+.category-image {
+  height: 5rem;
+}
+
+/* home body styling end  */
+
+/* media queries start */
+/* home page quries start */
+  @media (max-width: 900px) {
+    .home-body-container {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    .home-body-banner {
+      justify-content: center;
+    }
+
+    .quiz-settings {
+      margin-top: 1.5rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+/* home page queries end */
+/* media queries end */
