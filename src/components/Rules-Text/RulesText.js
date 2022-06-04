@@ -6,7 +6,7 @@ function RulesText() {
       <div className="quiz-banner">
         <img
           src="/assets/images/minion-all-the-best.jpg"
-          alt=""
+          alt="all the best"
           className="rules-banner"
         />
       </div>
