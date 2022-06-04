@@ -46,6 +46,18 @@ a {
   grid-area: body-container;
 }
 
+.body-container-rules {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100vw;
+  font-family: poppins;
+  font-size: 1.5rem;
+}
+
 .footer {
   display: flex;
   justify-content: center;
@@ -166,3 +178,8 @@ a {
 
 /* home page queries end */
 /* media queries end */
+
+.rules-banner {
+  max-width: 100%;
+  max-height: 100%;
+}
