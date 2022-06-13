@@ -4,14 +4,20 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { CategoryContextProvider } from "./context/CategoryContext.js";
+import { ScoreContextProvider } from "./context/ScoreContext.js";
+import { UserContextProvider } from "./context/UserContext.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
     <BrowserRouter>
-      <CategoryContextProvider>
-        <App />
-      </CategoryContextProvider>
+      <UserContextProvider>
+        <ScoreContextProvider>
+          <CategoryContextProvider>
+            <App />
+          </CategoryContextProvider>
+        </ScoreContextProvider>
+      </UserContextProvider>
     </BrowserRouter>
   </>
 );

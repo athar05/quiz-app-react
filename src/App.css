@@ -57,6 +57,17 @@ a {
   font-family: poppins;
   font-size: 1.5rem;
 }
+.body-container-quiz {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100vw;
+  font-family: poppins;
+  font-size: 1.5rem;
+}
 
 .footer {
   display: flex;
