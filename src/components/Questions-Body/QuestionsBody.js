@@ -46,13 +46,25 @@ function QuestionsBody({
     } else if (currQues + 1 === questions.length) {
       navigate("/result");
     } else if (selectedOption) {
-      resultDispatch({
-        type: "ADDED",
-        payload: {
-          question: questions[currQues],
-          optionSelected: selectedOption,
-        },
-      });
+      if (selectedOption === questions[currQues].correct_answer) {
+        resultDispatch({
+          type: "ADDED",
+          payload: {
+            question: questions[currQues],
+            optionSelected: selectedOption,
+            isCorrect: true,
+          },
+        });
+      } else {
+        resultDispatch({
+          type: "ADDED",
+          payload: {
+            question: questions[currQues],
+            optionSelected: selectedOption,
+            isCorrect: false,
+          },
+        });
+      }
       setCurrQues((currQues) => currQues + 1);
       setSelectedOption();
     } else setError("Please Select An Option First");
@@ -73,7 +85,12 @@ function QuestionsBody({
       <h2>Question {currQues + 1}</h2>
       <div className="single-question">
         {questions && <h4>{questions[currQues].question}</h4>}
-        {error && <div className="error-message">Please Select An Option </div>}
+        <div
+          className="error-message"
+          style={{ visibility: error ? "visible" : "hidden" }}
+        >
+          Please Select An Option{" "}
+        </div>
         <div className="options">
           {options &&
             options.map((opt) => (
