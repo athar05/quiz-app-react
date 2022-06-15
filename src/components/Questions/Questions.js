@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState, useContext, useEffect } from "react";
 import { CategoryContext } from "../../context/CategoryContext";
+import QuestionsHeader from "../Questions-header/QuestionsHeader";
+import QuestionsBody from "../Questions-Body/QuestionsBody";
 import { CircularProgress } from "@mui/material";
-import QuizHeader from "../Quiz-header/QuizHeader";
 
 function Questions() {
   const { category, setCategory } = useContext(CategoryContext);
@@ -11,6 +12,7 @@ function Questions() {
   const [questions, setQuestions] = useState(null);
   const [currQues, setCurrQues] = useState(0);
 
+  //Api call to fetch the data
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
@@ -22,14 +24,15 @@ function Questions() {
         console.log(error);
       }
     };
-
     fetchQuestions();
   }, []);
 
+  //function to shuffle the options array
   const handleShuffle = (optionArr) => {
     return optionArr.sort(() => Math.random() - 0.5);
   };
 
+  //side-effect to call the shuffle function eachtime there is a new question
   useEffect(() => {
     setOptions(
       questions &&
@@ -38,14 +41,31 @@ function Questions() {
           ...questions[currQues]?.incorrect_answers,
         ])
     );
-  }, [questions]);
-
-  console.log(options);
+  }, [questions, currQues]);
 
   return (
-    <div>
-      <QuizHeader questions={questions} />
-      {questions && questions.map((obj) => <div>{obj.question}</div>)}
+    <div className="questions-container">
+      {questions && (
+        <QuestionsHeader questions={questions} currQues={currQues} />
+      )}
+      {questions ? (
+        <QuestionsBody
+          currQues={currQues}
+          setCurrQues={setCurrQues}
+          questions={questions}
+          setQuestions={setQuestions}
+          options={options}
+          correctAnswer={questions[currQues]?.correct_answer}
+        />
+      ) : (
+        <CircularProgress
+          className="circular-progress"
+          style={{ margin: 100 }}
+          color="inherit"
+          size={150}
+          thickness={1}
+        />
+      )}
     </div>
   );
 }

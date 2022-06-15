@@ -4,6 +4,11 @@
   --primary: #3a86ff;
   --white: #fff;
   --gray: #e5e5e5;
+  --light-blue: #caf0f8;
+  --error: #f08080;
+  --red: rgb(233, 0, 0);
+  --green: rgb(0,233,0);
+  --black: black;
 }
 
 * {
@@ -167,6 +172,107 @@ a {
 
 /* home body styling end  */
 
+/* quiz page begins */
+
+.questions-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  border: 5px solid var(--primary);
+}
+
+.quiz-header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.quiz-details{
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 1rem;
+}
+
+.question-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-question {
+  width: 95%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.options {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.single-option {
+  width: 46%;
+  height: 50px;
+  padding: 15px 20px;
+  margin: 10px;
+  /* font-size: 1rem; */
+  background-color: var(--gray);
+  /* box-shadow: 0 0 2px black; */
+  border-radius: 0.1rem;
+  border: none;
+}
+
+.single-option:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  border: none;
+  border: 1px solid var(--primary);
+  color: var(--primary)
+}
+
+
+.controls {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.correct {
+  background-color: var(--green);
+  color: white;
+  box-shadow: 0 0 1px var(--black);
+}
+
+.wrong {
+  background-color: var(--red);
+  color: white;
+  box-shadow: 0 0 1px var(--black);
+}
+
+.error-message {
+  background-color: var(--error);
+  padding: 0.25rem 0.5rem;
+  width: 20%;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0.5rem 0%;
+}
+/* quiz page ends */
+
 /* media queries start */
 /* home page quries start */
   @media (max-width: 900px) {
@@ -185,7 +291,17 @@ a {
       display: flex;
       justify-content: center;
     }
+    .error-message{
+      font-size: 0.75rem;
+    }
   }
+
+
+@media (max-width: 614px) {
+  .singleOption {
+    width: 100%;
+  }
+}
 
 /* home page queries end */
 /* media queries end */
