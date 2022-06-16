@@ -60,6 +60,7 @@ function QuestionsBody({
           type: "ADDED",
           payload: {
             question: questions[currQues],
+            options: options,
             optionSelected: selectedOption,
             isCorrect: false,
           },
@@ -78,6 +79,10 @@ function QuestionsBody({
     setQuestions();
     setScore(0);
     navigate("/");
+    resultDispatch({
+      type: "REMOVED",
+      payload: [],
+    });
   };
 
   return (
