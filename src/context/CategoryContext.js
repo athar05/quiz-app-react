@@ -1,6 +1,8 @@
 import React, { createContext, useState } from "react";
 
-const CategoryContext = createContext();
+const CategoryContext = createContext({
+  value: 0,
+});
 
 function CategoryContextProvider({ children }) {
   const [category, setCategory] = useState({

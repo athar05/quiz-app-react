@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
+import { ResultContext } from "../../context/ResultContext.js";
 
 function Navbar() {
+  const { resultDispatch } = useContext(ResultContext);
+
+  const clickHandler = () => {
+    resultDispatch({
+      type: "REMOVED",
+      payload: [],
+    });
+  };
   return (
     <React.Fragment>
       <AppBar>
         <Toolbar className="nav">
           <div>
             <Typography>
-              <Link to="/" className="nav-text">
+              <Link to="/" className="nav-text" onClick={clickHandler}>
                 QuizTime
               </Link>
             </Typography>
