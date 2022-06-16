@@ -51,6 +51,7 @@ function QuestionsBody({
           type: "ADDED",
           payload: {
             question: questions[currQues],
+            options: options,
             optionSelected: selectedOption,
             isCorrect: true,
           },
