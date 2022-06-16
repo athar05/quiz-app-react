@@ -44,6 +44,27 @@ function QuestionsBody({
     if (!selectedOption) {
       setError(true);
     } else if (currQues + 1 === questions.length) {
+      if (selectedOption === questions[currQues].correct_answer) {
+        resultDispatch({
+          type: "ADDED",
+          payload: {
+            question: questions[currQues],
+            options: options,
+            optionSelected: selectedOption,
+            isCorrect: true,
+          },
+        });
+      } else {
+        resultDispatch({
+          type: "ADDED",
+          payload: {
+            question: questions[currQues],
+            options: options,
+            optionSelected: selectedOption,
+            isCorrect: false,
+          },
+        });
+      }
       navigate("/result");
     } else if (selectedOption) {
       if (selectedOption === questions[currQues].correct_answer) {
