@@ -22,7 +22,7 @@ function Navbar() {
           <div>
             <Typography>
               <Link to="/" className="nav-text" onClick={clickHandler}>
-                QuizTime
+                QuizzTimee
               </Link>
             </Typography>
           </div>
