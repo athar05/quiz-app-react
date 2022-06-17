@@ -6,7 +6,7 @@ import QuestionsBody from "../Questions-Body/QuestionsBody";
 import { CircularProgress } from "@mui/material";
 
 function Questions() {
-  const { category, setCategory } = useContext(CategoryContext);
+  const { category } = useContext(CategoryContext);
 
   const [options, setOptions] = useState();
   const [questions, setQuestions] = useState(null);
