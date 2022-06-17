@@ -7,6 +7,7 @@ function ResultBody() {
   const { score } = useContext(ScoreContext);
   return (
     <div className="result-body">
+      <h1>Result</h1>
       {result.map((obj) => (
         <div className="result-question-body">
           {obj.isCorrect ? (
