@@ -8,7 +8,7 @@ import { ScoreContextProvider } from "./context/ScoreContext.js";
 import { UserContextProvider } from "./context/UserContext.js";
 import { ResultContextProvider } from "./context/ResultContext";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
   <>
     <BrowserRouter>

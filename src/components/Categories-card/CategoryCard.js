@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { CategoryContext } from "../../context/CategoryContext";
-import Categories from "../../Data/Categories";
+import Categories from "../../Data/Categories.tsx";
 import { Link } from "react-router-dom";
 
 let categories = Categories;
 
-function CategoryCard() {
+const CategoryCard = () => {
   const { setCategory } = useContext(CategoryContext);
   return (
     <div className="quiz-category-listing">
@@ -25,6 +25,6 @@ function CategoryCard() {
       ))}
     </div>
   );
-}
+};
 
 export default CategoryCard;

@@ -1,4 +1,11 @@
-const Categories = [
+type CategoryType = {
+  category: string,
+  value: number,
+  img: string
+}[]
+
+
+const Categories: CategoryType = [
   {
     category: "General Knowledge",
     value: 9,

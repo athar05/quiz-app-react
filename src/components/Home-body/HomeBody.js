@@ -4,7 +4,7 @@ function HomeBody() {
   return (
     <div className="home-body-container">
       <div className="quiz-settings">
-        <h2>Quiz Settings</h2>
+        <h2>Choose A Category</h2>
         <CategoryCard />
       </div>
       <div className="home-body-banner">
